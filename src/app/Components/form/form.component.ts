@@ -16,14 +16,14 @@ export class FormComponent implements OnInit{
 service = inject(MiembrosService);
 provincias!: any[];
 arrayprovincias: any[] = [
-  "Alma Rosa 1",
-  "Alma Rosa 2",
-  "Los mina",
-  "Villa duarte",
-  "Cancino",
-  "Mendoza",
-  "Los frailes",
-  "Boca chica"
+  "Jima abajo",
+  "Barranca",
+  "Bacui",
+  "Las yerbas",
+  "La sabana de los jimenez",
+  "Las uvas",
+  "La vega",
+  "Ranchito"
 ];
 
 
