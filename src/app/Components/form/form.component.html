@@ -1,16 +1,16 @@
 <h2 class="text-center text-success fw-bold fst-italic">Unete a nosotros <img src="/images/logofupu.png" width="35" style="border-radius: 50%;"></h2>
 <form [formGroup]="usuariosform" (submit)="guardar()" >
- <select class=" form form-control mb-3" formControlName="provincia">
-    <option value="">Elije el terrotorio</option>
-    @for(p of arrayprovincias; track $index){
-      <option [value]="">{{p}}</option>
+ <select class=" form form-control mb-3" formControlName="idTerritorio">
+    <option [ngValue]="0">Elija el territorio</option>
+    @for(p of territorios; track p.idTerritorio){
+      <option [value]="p.idTerritorio">{{p.nombre}}</option>
     }
   </select>
 
     <input class="form form-control rounded-5 mb-3" formControlName="nombre" type="text" placeholder="Nombre">
     <input class="form form-control rounded-5 mb-3" formControlName="telefono"  type="text" placeholder="Telefono">
      <input class="form form-control rounded-5 mb-3" formControlName="direccion" type="text" placeholder="Direccion">
-    <input class="form form-control rounded-5 mb-3" formControlName="colegioelectoral" type="text" placeholder="Colegio electoral">
+    <input class="form form-control rounded-5 mb-3" formControlName="colegioElectoral" type="text" placeholder="Colegio electoral">
 
      <button type="submit" class="btn btn-success w-100 mt-2 rounded-5" >Enviar</button>
 </form>

@@ -10,7 +10,7 @@ import { PropComponent } from './Components/prop/prop.component';
 
 export const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', component: LayoutComponent
   },
   {
     path: 'layout', component: LayoutComponent,

@@ -9,7 +9,7 @@ import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, FormComponent, RouterLink, FooterComponent],
+  imports: [ FormComponent, RouterLink, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

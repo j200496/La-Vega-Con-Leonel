@@ -1,9 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, model, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { inject, Injectable } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MiembrosService } from '../../Service/miembros.service';
+import { Territorio } from '../Core/Territorio';
+import { TerritoriosService } from '../../Service/territorios.service';
+import { Miembros } from '../Core/Miembros';
 
 @Component({
   selector: 'app-form',
@@ -14,6 +17,7 @@ import { MiembrosService } from '../../Service/miembros.service';
 
 export class FormComponent implements OnInit{
 service = inject(MiembrosService);
+territorioservice = inject(TerritoriosService)
 provincias!: any[];
 arrayprovincias: any[] = [
   "Jima abajo",
@@ -25,40 +29,39 @@ arrayprovincias: any[] = [
   "La vega",
   "Ranchito"
 ];
-
+territorios:Territorio[] = [];
 
 usuariosform = new FormGroup({
-  idPersona: new FormControl(0),
-  nombre: new FormControl(""),
-  telefono: new FormControl(""),
-  direccion: new FormControl(''),
-  colegioelectoral: new FormControl(""),
-  provincia: new FormControl('Elija la provincia'),
+  nombre: new FormControl("", {nonNullable: true}),
+  telefono: new FormControl("",{nonNullable: true}),
+  direccion: new FormControl('',{nonNullable: true}),
+  colegioElectoral: new FormControl("",{nonNullable: true}),
+  idTerritorio: new FormControl(0,{nonNullable: true}),
 })
 ngOnInit(): void {
-/*  this.service.getprovincias().subscribe(p => {
-    this.provincias = p;
-  })*/
+this.GetTerritorios();
 }
+GetTerritorios(){
+this.territorioservice.GetallTerritorios().subscribe(t => {
+  this.territorios = t;
+})
+}
+
 guardar(){
-  const {nombre,telefono,direccion,colegioelectoral,provincia} = this.usuariosform.value;
-  if(!nombre || !telefono || !direccion || !colegioelectoral || !provincia){
+  const {nombre,telefono,direccion,colegioElectoral,idTerritorio} = this.usuariosform.value;
+  if(!nombre || !telefono || !direccion || !colegioElectoral || !idTerritorio){
     this.service.error("Todos los campos son requeridos","Error","red");
     return;
   }
-  if(colegioelectoral.length < 11){
-  this.service.warning("Error","El campo cedula requiere 11 caracteres!","red");
-  return;
-  }
-  if(!colegioelectoral.includes('-')){
-      this.service.warning("El campo cedula debe incluir guion","Ejemplo: -","red");
-    return;
-  }
-  const formulario = this.usuariosform.value;
+
+  const formulario = this.usuariosform.getRawValue(); 
+    console.log(formulario)
   this.service.postpersonas(formulario).subscribe(() =>{
-    this.service.warning("Datos enviados exitosamente!","Gracias!","green");
-    this.usuariosform.reset();
-    this.usuariosform.get('provincia')?.setValue('Elija la provincia');
+    this.service.success("Datos enviados exitosamente!","Gracias!","green");
+    this.usuariosform.reset({
+      idTerritorio: 0
+    })
+
   })
 }
 }
