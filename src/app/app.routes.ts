@@ -9,31 +9,19 @@ import { P4Component } from './Components/p4/p4.component';
 import { PropComponent } from './Components/prop/prop.component';
 
 export const routes: Routes = [
+
   {
-    path: '', component: HomeComponent
-  },
-  {
-    path: 'layout', component: LayoutComponent,
-    children: [
-      {
-        path:'economia', component: P1Component
-      },
-      {
-        path:'home',component:HomeComponent
-      },
-      {
-        path:'seguridad',component:P2Component
-      },   
-     {
-        path:'RelIntern',component:P3Component
-      },
-      {
-        path:'PSociales',component:P4Component
-      },
-      {
-        path:'prop',component:PropComponent
-      }
-    ]
-  }
+  path:'',
+  component: LayoutComponent,
+  children:[
+    { path:'', redirectTo:'home', pathMatch:'full' },
+    { path:'economia', component:P1Component },
+    { path:'home', component:HomeComponent },
+    { path:'seguridad', component:P2Component },
+    { path:'RelIntern', component:P3Component },
+    { path:'PSociales', component:P4Component },
+    { path:'prop', component:PropComponent }
+  ]
+}
 ];
 
