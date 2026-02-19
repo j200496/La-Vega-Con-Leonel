@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { Miembros } from '../Components/Core/Miembros';
+import { environment } from '../Components/enviroment.prod';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,12 +11,14 @@ export class MiembrosService {
 private urlpersonas = 'https://localhost:7052/api/Personas';
 private urlprovincias = "https://localhost:7052/api/Provicias";
 private urllocal = 'https://localhost:7045/'
+private urlprod = environment.apiUrl;
+
 http = inject(HttpClient);
 getprovincias(): Observable<any> {
-  return this.http.get<any>(this.urlprovincias);
+  return this.http.get<any>(`${this.urlprod}/api/Territorio`);
 }
 postpersonas(data: Miembros){
-return this.http.post(`${this.urllocal}api/Miembros`, data);
+return this.http.post(`${this.urlprod}api/Miembros`, data);
 }
  success(title:string, text:string, btncolor:string){
 return Swal.fire({
