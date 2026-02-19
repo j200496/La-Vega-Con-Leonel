@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { Miembros } from '../Components/Core/Miembros';
-import { environment } from '../Components/enviroment.prod';
+import { environment } from '../../environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
