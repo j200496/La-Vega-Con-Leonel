@@ -18,7 +18,7 @@ getprovincias(): Observable<any> {
   return this.http.get<any>(`${this.urlprod}/api/Territorio`);
 }
 postpersonas(data: Miembros){
-return this.http.post(`${this.urlprod}api/Miembros`, data);
+return this.http.post(`${this.urlprod}/api/Miembros`, data);
 }
  success(title:string, text:string, btncolor:string){
 return Swal.fire({
