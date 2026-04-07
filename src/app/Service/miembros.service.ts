@@ -3,13 +3,11 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { Miembros } from '../Components/Core/Miembros';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class MiembrosService {
-private urlpersonas = 'https://localhost:7052/api/Personas';
-private urlprovincias = "https://localhost:7052/api/Provicias";
 private urllocal = 'https://localhost:7045/'
 private urlprod = environment.apiUrl;
 

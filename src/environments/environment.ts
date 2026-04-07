@@ -1,4 +1,4 @@
 export const environment = {
-    production:false,
-  apiUrl: 'https://localhost:7045'
+    production:true,
+  apiUrl: 'https://landingcandidate-production.up.railway.app'
 };
