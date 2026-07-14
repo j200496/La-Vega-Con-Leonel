@@ -1,278 +1,151 @@
-
 <section class="sd position-relative">
   <!-- Imagen hero optimizada -->
   <img
-    src="/images/entradavega.jpeg"
+    src="/images/carlosgilfondo.jpeg"
     fetchpriority="high"
     decoding="async"
     class="bg-img"
-    alt="La vega"
+    alt="Carlos Gil"
   />
 
   <!-- Overlay -->
   <div class="hero-overlay"></div>
 
   <div class="container position-relative z-1">
-    <a
-      href="https://wa.me/18090000000"
-      class="whatsapp-float"
-      target="_blank"
-      aria-label="WhatsApp"
-    >
-      <i class="bi bi-whatsapp"></i>
-    </a>
-
-    <div class="row align-items-center min-vh-75" style="margin-top: 40%;">
+    <div class="row align-items-center min-vh-75" style="margin-top: 140%">
       <div class="col-lg-6 col-md-10 col-12">
-       
-        <h1 class="hero-title fw-bold fst-italic">Unete a nosotros</h1>
+        <h1 class="hero-title fw-bold fst-italic">Unete a nuestro equipo!</h1>
 
-        <p class="hero-text mt-3">
-          Nuevo paradigma de sociedad del conocimiento para el progreso y la
-          justicia social en la República Dominicana.
-        </p>
+        <p class="hero-text mt-3">Menos promesas, más realidades!</p>
 
         <button
           class="btn w-100 px-5 py-2 rounded-pill mt-3"
-          style="background-color: rgba(22, 241, 22, 0.534); color: rgb(221, 221, 125);"
-          routerLink="/prop"
+          style="
+            background-color: rgba(22, 241, 22, 0.534);
+            color: rgb(221, 221, 125);
+          "
+          (click)="scrollform()"
         >
-          Ver más
+          Unete
         </button>
       </div>
     </div>
   </div>
 </section>
+
 <section>
   <div class="container">
     <div class="row justify-content-center mt-4 container">
-      <div class="col-lg-6 col-12">
-        <h6 class="fw-bold text-success mt-5" style="font-size: 26px;">
-          Mensaje del Presidente Leonel Fernandez
-        </h6>
-        <p class="lead" style="text-align: justify" data-aos="fade-down-left">
-          Al avanzar en la segunda década del siglo XXI, la República Dominicana
-          se encuentra en una encrucijada. Por un lado, resulta evidente el
-          progreso conquistado durante el último cuarto de siglo, como
-          consecuencia de la aceleración del crecimiento económico y de la
-          transformación social experimentados.
-        </p>
-        <p class="lead" style="text-align: justify" data-aos="fade-down-left">
-          Pero, por otro lado, también persisten rezagos y carencias en la
-          sociedad dominicana que hacen necesaria la aplicación de políticas
-          públicas orientadas, entre otras, a la reducción de la pobreza, la
-          provisión de alimentación adecuada, el acceso al agua potable, la
-          transmisión de electricidad, la construcción de viviendas dignas,
-          calidad de la educación, salud integral y seguridad ciudadana.
-        </p>
-        <p class="lead" style="text-align: justify" data-aos="fade-down-left">
-          Esas son necesidades básicas que deben ser satisfechas para el
-          conjunto de la población, a los fines de evolucionar hacia una
-          sociedad próspera, justa y solidaria, que garantice bienestar a todos
-          los integrantes de nuestra sociedad.
-        </p>
-      </div>
-      <div class="col-lg-6 col-md-9 col-12">
-        <img
-          src="/images/leoneldiscnobg.png"
-          loading="lazy"
-          width="500"
-          height="100"
-          class="img-fluid"
-          alt="Mensaje del candidato"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-<section class="bg-success sc" id="propuestas">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-7 col-md-12 col-12 container">
-        <h4 class="text-white fw-bold fst-italic mt-4" style="font-size: 25px">
-          Propuestas para transformar la Republica Dominicana
-        </h4>
-      </div>
-    </div>
-  </div>
-  <div class="container mb-3">
-    <div class="row justify-content-center container mb-3">
-      <div class="col-12 mt-4 col-md-6 col-lg-6" data-aos="fade-down">
-        <div class="card cb bg-transparent" id="card">
-          <img
-            src="images/economy.jpg"
-            width="600"
-            height="400"
-            class="card-img-top img-fluid card-img-fixed"
-            alt="Economía"
-            routerLink="/economia"
-          />
-          <div class="card-body">
-            <h5 class="card-title text-white fst-italic text-center">
-              Economia
-            </h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mt-4 col-md-6 col-lg-6" data-aos="fade-down">
-        <div class="card cb bg-transparent" id="card">
-          <img
-            src="images/ciudadaniadom.webp"
-            loading="lazy"
-            width="600"
-            height="400"
-            class="card-img-top img-fluid card-img-fixed"
-            alt="Seguridad"
-            routerLink="/seguridad"
-          />
-          <div class="card-body">
-            <h5 class="card-title text-white fst-italic text-center">
-              Seguridad ciudadana
-            </h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mt-4 col-md-6 mb-4 col-lg-6" data-aos="fade-down">
-        <div class="card cb bg-transparent" id="card">
-          <img
-            src="images/ir.jpg"
-            width="600"
-            height="400"
-            class="card-img-top img-fluid card-img-fixed"
-            alt="Relaciones internacionales"
-            routerLink="/RelIntern"
-          />
-          <div class="card-body">
-            <h5 class="card-title text-white fst-italic text-center">
-              Relaciones internacionales
-            </h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mt-4 col-md-6 col-lg-6 mb-4" data-aos="fade-down">
-        <div class="card cb bg-transparent" id="card">
-          <img
-            src="images/sh.jpg"
-            width="600"
-            height="400"
-            class="card-img-top img-fluid card-img-fixed"
-            alt="Programas sociales"
-            routerLink="/PSociales"
-          />
-          <div class="card-body">
-            <h5 class="card-title text-white fst-italic text-center">
-              Programas sociales
-            </h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-2 col-md-3 col-5">
-        <h2 class="mt-5 text-success fw-bold fst-italic" id="escribenos">
-          Escribenos
+      <div class="col-lg-4 col-md-9 col-12">
+        <span
+          class="badge bg-success-subtle text-success fw-bold"
+          style="font-size: small"
+        >
+          Historia y compromiso
+        </span>
+        <h2 class="fw-bold fst-italic mt-2 text-success">
+          Carlos Gil, un hombre de acción y compromiso
         </h2>
+        <p class="text-muted mt-3 text-justify">
+          Carlos Gil es un hombre de acción y compromiso, con una trayectoria
+          destacada en la política y el servicio público. Su dedicación a la
+          comunidad y su enfoque en el bienestar de los ciudadanos lo han
+          convertido en un líder respetado y admirado. Con una visión clara y un
+          enfoque en la mejora continua, Carlos Gil trabaja incansablemente para
+          lograr un futuro mejor para todos.
+        </p>
+        <p class="text-muted mt-3 text-justify">
+          Su experiencia en la gestión de proyectos y su capacidad para tomar
+          decisiones informadas lo han llevado a implementar políticas efectivas
+          que benefician a la sociedad. Carlos Gil se destaca por su integridad,
+          transparencia y compromiso con los valores democráticos, lo que le ha
+          permitido ganarse la confianza de la comunidad.
+        </p>
+        <p class="text-muted mt-3 text-justify">
+          Con un enfoque en la participación ciudadana y la colaboración con
+          diferentes sectores, Carlos Gil busca construir un entorno inclusivo y
+          próspero para todos. Su liderazgo inspirador y su dedicación a la
+          mejora de la calidad de vida de los ciudadanos lo convierten en un
+          referente en la política y el servicio público.
+        </p>
       </div>
-    </div>
-    <div class="row justify-content-start">
-      <div class="col-lg-6 mt-3 col-12">
-        <div class="shadow-lg">
-          <div class="card">
-            <div class="card-header bg-success text-white text-center">
-              <h5>Escribenos por correo</h5>
-            </div>
-            <form action="" style="padding: 5%">
-              <input
-                type="text"
-                class="form-control mt-3"
-                placeholder="Nombre"
-                required
-              />
-              <input
-                type="email"
-                class="form-control mt-3"
-                placeholder="Correo"
-                required
-              />
-              <textarea
-                name=""
-                class="form-control mt-3"
-                placeholder="Mensaje"
-                id=""
-                required
-              ></textarea>
-              <button class="btn btn-success mt-3 w-100">Enviar</button>
-            </form>
-          </div>
+      <div class="col-lg-4 col-md-9 col-12" id="about">
+        <div class="card border-0 rounded-4 shadow-lg cb" id="card">
+          <img
+            src="/images/carlosg.jpg"
+            loading="lazy"
+            width="500"
+            height="100"
+            class="img-fluid"
+            alt="Carlos Gil"
+          />
+        </div>
+        <div class="card border-0 rounded-4 shadow-lg cb mt-4" id="card">
+          <p class="text-muted fw-bold text-center mt-3 mb-3 p-3">
+            Renovemos nuestra ciudad con honestidad y trabajo,menos promesas,
+            más realidades
+          </p>
+        </div>
+        <div class="card border-0 rounded-4 shadow-lg cb mt-4" id="card">
+          <h5 class="text-center text-success fw-bold mt-2">
+            <i class="bi bi-check-circle"></i> Trayectoria
+          </h5>
+          <p class="text-muted fst-italic text-center mt-3 mb-3 p-3">
+            Carlos Gil ha demostrado un compromiso constante con la comunidad a
+            lo largo de su carrera. Su experiencia como diputado y su enfoque en
+            el bienestar de los ciudadanos lo han llevado a implementar
+            políticas efectivas que benefician a la sociedad. Con una visión
+            clara y un enfoque en la mejora continua, <strong>Carlos Gil</strong> trabaja
+            incansablemente para lograr un futuro mejor para todos.
+          </p>
+        </div>
+
+        <div class="card border-0 rounded-4 shadow-lg cb mt-4" id="card">
+          <h5 class="text-center text-success fw-bold mt-2">
+            <i class="bi bi-shield-check"></i>
+ Compromiso
+          </h5>
+          <p class="text-muted fst-italic text-center mt-3 mb-3 p-3">
+            <strong
+              >Una gestión transparente, de puertas abiertas y para la
+              gente.</strong
+            >
+            <br />Tu confianza es nuestro valor más sagrado. Nos comprometemos a
+            gobernar con total honestidad, rindiendo cuentas claras de cada peso
+            invertido y eliminando la burocracia. Nuestro único pacto es
+            contigo, con tus hijos y con cada vecino; por eso, la alcaldía
+            dejará de estar detrás de un escritorio para trabajar directamente
+            en las calles, escuchando y resolviendo tus necesidades prioritarias
+          </p>
+        </div>
+
+        <div class="card border-0 rounded-4 shadow-lg cb mt-4" id="card">
+          <h5 class="text-center text-success fw-bold mt-2">
+            <i class="bi bi-lightbulb"></i>
+ Visión de Futuro
+          </h5>
+          <p class="text-muted fst-italic text-center mt-3 mb-3 p-3">
+           Diseñamos el municipio del mañana con soluciones inteligentes hoy. Nos enfocamos en la modernización de los servicios públicos, la implementación de tecnología avanzada para la seguridad ciudadana y la creación de más espacios verdes para la convivencia familiar. Impulsamos un crecimiento ordenado que atraiga inversiones, genere empleos locales y garantice una mejor calidad de vida para las próximas generaciones.
+          </p>
+        </div>
+
+          <div class="card border-0 rounded-4 shadow-lg cb mt-4" id="card">
+          <h5 class="text-center text-success fw-bold mt-2">
+            <i class="bi bi-people"></i>
+ Cercanía
+          </h5>
+          <p class="text-muted fst-italic text-center mt-3 mb-3 p-3">
+          <strong>Un vecino que conoce tus problemas porque vive tu misma realidad</strong> <br> Como ciudadanos que amamos Santo Domingo Este, caminamos tus mismos barrios, escuchamos tus preocupaciones y compartimos tus mismos sueños. Esta no es una campaña de políticos distantes; es un proyecto colectivo de ciudadanos unidos, decididos a recuperar el orgullo local y a transformar juntos cada rincón de nuestra comunidad.
+          </p>
         </div>
       </div>
-      <div class="col-lg-6 col-12">
-        <img src="images/bandera1nobg.png" class="img-fluid mt-0" alt="" />
-      </div>
     </div>
   </div>
 </section>
-<section class="">
-  <div
-    id="carouselExampleAutoplaying"
-    class="carousel slide"
-    data-bs-ride="carousel"
-    data-bs-interval="5000"
-    data-bs-pause="hover"
-  >
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img
-          src="images/leonelpodiun.jpg"
-          loading="lazy"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="images/carr2.webp"
-          loading="lazy"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="images/lavegaleonel.jpeg"
-          loading="lazy"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-    </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselExampleAutoplaying"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselExampleAutoplaying"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</section>
-<section id="formu">
+
+<section id="form">
   <div class="container">
-    <div class="row justify-content-center mt-4">
+    <div class="row justify-content-center mt-5">
       <div class="col-md-8">
         <app-form></app-form>
       </div>

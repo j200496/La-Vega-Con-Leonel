@@ -1,0 +1,6 @@
+
+  .social-btn:hover {
+    background-color: rgba(255, 255, 255, 1) !important; /* El fondo se vuelve blanco sólido */ /* El logo se pinta del verde del fondo */
+    transform: translateY(-4px); /* Sutil salto hacia arriba */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important; /* Sombra más pronunciada */
+  }

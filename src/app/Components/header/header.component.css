@@ -5,7 +5,6 @@ a{
     cursor: pointer;
 }
 #inicio {
-  background-color: rgba(32, 129, 56, 0.767);
   backdrop-filter: blur(6px);
 }
 

@@ -11,6 +11,8 @@ export class MiembrosService {
 private urllocal = 'https://localhost:7045/'
 private urlprod = environment.apiUrl;
 
+maincolor = '#45971e';
+
 http = inject(HttpClient);
 getprovincias(): Observable<any> {
   return this.http.get<any>(`${this.urlprod}/api/Territorio`);

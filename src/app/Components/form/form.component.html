@@ -1,17 +1,28 @@
-<h2 class="text-center text-success fw-bold fst-italic">Unete a nosotros <img src="/images/logofupu.png" width="35" style="border-radius: 50%;"></h2>
+<h2 class="text-center text-success fw-bold fst-italic">Unete a nuestro equipo!</h2>
+ <p class="text-muted mt-2 text-center">
+        Registrate y se parte del futuro de Santo Domingo Este!
+      </p>
 <form [formGroup]="usuariosform" (submit)="guardar()" >
- <select class=" form form-control mb-3" formControlName="idTerritorio">
-    <option [ngValue]="0">Elija el territorio</option>
+ <select class=" form form-control bg-light rounded-5 mb-3" formControlName="idTerritorio">
+    <option [ngValue]="0">Elije el sector</option>
     @for(p of territorios; track p.idTerritorio){
       <option [value]="p.idTerritorio">{{p.nombre}}</option>
     }
   </select>
 
-    <input class="form form-control rounded-5 mb-3" formControlName="nombre" type="text" placeholder="Nombre">
-    <input class="form form-control rounded-5 mb-3" formControlName="telefono"  type="text" placeholder="Telefono">
-     <input class="form form-control rounded-5 mb-3" formControlName="direccion" type="text" placeholder="Direccion">
-    <input class="form form-control rounded-5 mb-3" formControlName="colegioElectoral" type="text" placeholder="Colegio electoral">
+    <label for="nombre" class="form-label fw-semibold text-secondary">Nombre</label>
+    <input class="form form-control bg-light rounded-5 mb-3" formControlName="nombre" type="text">
+    <label for="telefono" class="form-label fw-semibold text-secondary">Telefono</label>
+    <input class="form form-control bg-light rounded-5 mb-3" formControlName="telefono"  type="text">
+    <label for="direccion" class="form-label fw-semibold text-secondary">Direccion</label>
+    <input class="form form-control bg-light rounded-5 mb-3" formControlName="direccion" type="text" >
+    <label for="colegioElectoral" class="form-label fw-semibold text-secondary">Recinto electoral</label>
+    <input class="form form-control bg-light rounded-5 mb-3" formControlName="colegioElectoral" type="text">
+    <label for="cedula" class="form-label fw-semibold text-secondary">Cedula</label>
+    <input class="form form-control bg-light rounded-5 mb-3" formControlName="cedula" type="text">
+    <label for="fechaNacimiento" class="form-label fw-semibold text-secondary">Fecha de nacimiento</label>
+    <input class="form form-control bg-light rounded-5 mb-3" formControlName="fechaNacimiento" type="date" >
 
-     <button type="submit" class="btn btn-success w-100 mt-2 rounded-5" >Enviar</button>
+     <button type="submit" class="btn btn-success w-100 mt-3 rounded-5" >Registrarse</button>
 </form>
 
