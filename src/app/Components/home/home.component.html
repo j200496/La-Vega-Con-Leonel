@@ -1,32 +1,27 @@
-<section class="sd position-relative">
+<section class="" style="background-image: url('/images/palaciomunicipal.jpeg'); 
+background-size: cover; background-position: center; height: 100vh; position: relative;">
   <!-- Imagen hero optimizada -->
-  <img
-    src="/images/carlosgilfondo.jpeg"
-    fetchpriority="high"
-    decoding="async"
-    class="bg-img"
-    alt="Carlos Gil"
-  />
 
   <!-- Overlay -->
-  <div class="hero-overlay"></div>
+  <div class=""></div>
 
   <div class="container position-relative z-1">
-    <div class="row align-items-center min-vh-75" style="margin-top: 140%">
-      <div class="col-lg-6 col-md-10 col-12">
-        <h1 class="hero-title fw-bold fst-italic">Unete a nuestro equipo!</h1>
+    <div class="row align-items-center m">
+      <div class="col-lg-12 col-md-10 col-12" style="margin-top: 10%;">
+        <h1 class="hero-title fw-bold fst-italic">Carlos Gil Alcalde 2028</h1>
 
         <p class="hero-text mt-3">Menos promesas, más realidades!</p>
-
-        <button
+      </div>
+      <div class="col-lg-6 col-md-6 col-12 mt-3">
+              <button
           class="btn w-100 px-5 py-2 rounded-pill mt-3"
           style="
             background-color: rgba(22, 241, 22, 0.534);
-            color: rgb(221, 221, 125);
+            color: rgb(88, 88, 7);
           "
           (click)="scrollform()"
         >
-          Unete
+        <strong>Reporta un problema de tu comunidad</strong>  
         </button>
       </div>
     </div>
@@ -36,7 +31,7 @@
 <section>
   <div class="container">
     <div class="row justify-content-center mt-4 container">
-      <div class="col-lg-4 col-md-9 col-12">
+      <div class="col-lg-12 col-md-9 col-12">
         <span
           class="badge bg-success-subtle text-success fw-bold"
           style="font-size: small"
@@ -69,7 +64,7 @@
           referente en la política y el servicio público.
         </p>
       </div>
-      <div class="col-lg-4 col-md-9 col-12" id="about">
+      <div class="col-lg-6 col-md-9 col-12" id="about">
         <div class="card border-0 rounded-4 shadow-lg cb" id="card">
           <img
             src="/images/carlosg.jpg"
@@ -143,15 +138,15 @@
   </div>
 </section>
 
-<section id="form">
+<section class="mt-5" id="form">
   <div class="container">
     <div class="row justify-content-center mt-5">
       <div class="col-md-8">
-        <app-form></app-form>
+        <app-reportsform></app-reportsform>
       </div>
     </div>
   </div>
-</section>
+
 <section class="mt-5" id="contacto">
   <app-footer></app-footer>
 </section>

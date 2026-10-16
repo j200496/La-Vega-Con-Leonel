@@ -7,10 +7,11 @@ import { Subscription } from 'rxjs';
 import { NgOptimizedImage } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { MiembrosService } from '../../Service/miembros.service';
+import { ReportsformComponent } from '../reportsform/reportsform.component';
 
 @Component({
   selector: 'app-home',
-  imports: [ FormComponent, FooterComponent,CommonModule],
+  imports: [ FooterComponent,CommonModule,ReportsformComponent,RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

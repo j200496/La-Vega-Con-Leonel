@@ -1,0 +1,359 @@
+.report-page {
+  min-height: 100vh;
+  padding: 64px 20px;
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(45, 144, 78, 0.09), transparent 34%),
+    #f5f8f5;
+  color: #1c2920;
+}
+
+.report-card {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #e8eee8;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(32, 62, 40, 0.08);
+}
+
+.report-header {
+  padding: 40px 48px 32px;
+  border-bottom: 1px solid #edf1ed;
+  text-align: center;
+}
+
+.report-icon,
+.upload-icon {
+  display: grid;
+  place-items: center;
+  color: #248344;
+  background: #edf7ef;
+}
+
+.report-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px;
+  border-radius: 17px;
+}
+
+.report-icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.report-icon path,
+.upload-icon path,
+.select-wrap svg path,
+.submit-button svg path {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #438158;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+.report-header h1 {
+  margin: 0;
+  color: #17261b;
+  font-size: clamp(1.75rem, 4vw, 2.2rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+}
+
+.intro {
+  max-width: 510px;
+  margin: 12px auto 0;
+  color: #718076;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.report-form {
+  padding: 32px 48px 40px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 18px;
+}
+
+.field {
+  min-width: 0;
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.field > label {
+  display: block;
+  margin-bottom: 8px;
+  color: #34433a;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.required-mark {
+  color: #258246;
+}
+
+.optional-label {
+  margin-left: 5px;
+  color: #8c9990;
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
+.field input:not([type="file"]),
+.field select {
+  width: 100%;
+  height: 49px;
+  padding: 0 14px;
+  border: 1px solid #dfe7e0;
+  border-radius: 11px;
+  outline: none;
+  background: #fff;
+  color: #27352b;
+  font: inherit;
+  font-size: 0.9rem;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.field input::placeholder,
+.field select:invalid {
+  color: #a0aaa3;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #53a16a;
+  box-shadow: 0 0 0 3px rgba(53, 145, 77, 0.12);
+}
+
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap select {
+  appearance: none;
+  padding-right: 42px;
+}
+
+.select-wrap svg {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 19px;
+  height: 19px;
+  color: #78877c;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  color: #b53b3b;
+  font-size: 0.78rem;
+}
+
+.upload-area {
+  position: relative;
+  overflow: hidden;
+  border: 1px dashed #b9d4bf;
+  border-radius: 13px;
+  background: #fbfdfb;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.upload-area:hover,
+.upload-area:focus-within {
+  border-color: #45955d;
+  background: #f6fbf7;
+}
+
+.file-input {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-content {
+  display: flex;
+  min-height: 153px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-icon {
+  width: 39px;
+  height: 39px;
+  margin-bottom: 11px;
+  border-radius: 12px;
+}
+
+.upload-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.upload-icon path {
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+.upload-title {
+  color: #34433a;
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+.upload-title span {
+  color: #728077;
+  font-weight: 400;
+}
+
+.upload-help {
+  margin-top: 6px;
+  color: #89958c;
+  font-size: 0.75rem;
+}
+
+.file-list {
+  display: grid;
+  gap: 7px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.file-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  background: #f5f8f5;
+  font-size: 0.8rem;
+}
+
+.file-name {
+  overflow: hidden;
+  color: #4a584e;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.remove-file {
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #597963;
+  font: inherit;
+  cursor: pointer;
+}
+
+.remove-file:hover {
+  color: #a33d3d;
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #edf1ed;
+}
+
+.form-footer p {
+  margin: 0;
+  color: #77847a;
+  font-size: 0.8rem;
+}
+
+.submit-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 11px;
+  background: #248344;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.submit-button:hover {
+  background: #1d7139;
+  transform: translateY(-1px);
+}
+
+.submit-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.submit-button svg path {
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+@media (max-width: 600px) {
+  .report-page {
+    padding: 24px 12px;
+  }
+
+  .report-card {
+    border-radius: 18px;
+  }
+
+  .report-header {
+    padding: 30px 22px 25px;
+  }
+
+  .report-form {
+    padding: 25px 22px 28px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .field-full {
+    grid-column: auto;
+  }
+
+  .form-footer {
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 24px;
+  }
+}

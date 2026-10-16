@@ -72,10 +72,10 @@ background-color: #1ebc5d;
 
 .hero-title {
   font-size: clamp(2.2rem, 4vw, 3.2rem);
-  color: #16fa01;
+  color: #04831fb0;
 }
 
 .hero-text {
-  color: #b8ff8a;
+  color: #061401;
   font-size: 1.1rem;
 }
