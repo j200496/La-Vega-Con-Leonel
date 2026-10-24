@@ -14,6 +14,6 @@ private urlprod = environment.apiUrl;
 http = inject(HttpClient)
 
 GetallTerritorios(): Observable<Territorio[]>{
-return this.http.get<Territorio[]>(`${this.urlprod}/api/Territorio`);
+return this.http.get<Territorio[]>(`${this.urllocal}/api/Territorio`);
 }
 }

@@ -13,7 +13,7 @@
       <p class="intro">Ayúdanos a conocer lo que sucede en tu comunidad. Completa los datos y cuéntanos dónde podemos ayudar.</p>
     </header>
 
-    <form class="report-form" [formGroup]="reportForm" (ngSubmit)="submitReport()">
+    <form class="report-form" [formGroup]="reportForm" (ngSubmit)="AddReporte()">
       <div class="form-grid">
         <div class="field field-full">
           <label for="sector">Sector <span class="required-mark">*</span></label>
@@ -24,20 +24,26 @@
                 <option [value]="territorio.idTerritorio">{{ territorio.nombre }}</option>
               }
             </select>
-              <label for="sector">Categoria <span class="required-mark">*</span></label>
-             <select id="sector" formControlName="idTerritorio" [attr.aria-invalid]="reportForm.controls.idTerritorio.touched && reportForm.controls.idTerritorio.invalid">
-              <option value="" disabled>Selecciona la categoria</option>
-              @for (territorio of territorios; track territorio.idTerritorio) {
-                <option [value]="territorio.idTerritorio">{{ territorio.nombre }}</option>
-              }
-            </select>
             <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg>
           </div>
+        
+                <label for="categoria">Categoria <span class="required-mark">*</span></label>
+             <div class="select-wrap">
+             <select id="categoria" formControlName="idCategoria" [attr.aria-invalid]="reportForm.controls.idCategoria.touched && reportForm.controls.idCategoria.invalid">
+              <option value="" disabled>Selecciona la categoria</option>
+              @for (categoria of categorias; track categoria.idCategoria) {
+                <option [value]="categoria.idCategoria">{{ categoria.categorias }}</option>
+              }
+            </select>
+               <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg>
+           </div>
+            
           @if (territoriosError) {
             <span class="field-error" role="alert">{{ territoriosError }}</span>
           } @else if (reportForm.controls.idTerritorio.touched && reportForm.controls.idTerritorio.invalid) {
             <span class="field-error">Selecciona un sector para continuar.</span>
           }
+          
         </div>
 
         <div class="field">
@@ -79,9 +85,9 @@
         </div>
 
         <div class="field field-full">
-          <label for="fotos">Fotografías <span class="optional-label">Opcional</span></label>
+          <label for="fotos">Fotografía <span class="optional-label">Opcional</span></label>
           <div class="upload-area">
-            <input id="fotos" class="file-input" type="file" accept="image/*" multiple (change)="onFilesSelected($event)" aria-describedby="upload-help">
+            <input #fotoInput id="fotos" class="file-input" type="file" accept="image/*" (change)="onFilesSelected($event)" aria-describedby="upload-help">
             <label class="upload-content" for="fotos">
               <span class="upload-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -89,22 +95,24 @@
                   <path d="M5 14v4.25A1.75 1.75 0 0 0 6.75 20h10.5A1.75 1.75 0 0 0 19 18.25V14" />
                 </svg>
               </span>
-              <span class="upload-title">Haz clic para elegir fotos</span>
-              <span id="upload-help" class="upload-help">JPG, PNG o WEBP · Puedes seleccionar varias</span>
+              <span class="upload-title">Haz clic para elegir la foto</span>
+              <span id="upload-help" class="upload-help">JPG, PNG o WEBP · Selecciona una foto</span>
             </label>
           </div>
-          @if (selectedFiles.length > 0) {
-            <ul class="file-list" aria-label="Fotos seleccionadas">
-              @for (file of selectedFiles; track $index; let i = $index) {
-                <li>
-                  <span class="file-name">{{ file.name }}</span>
-                  <button class="remove-file" type="button" (click)="removeFile(i)" [attr.aria-label]="'Quitar ' + file.name">Quitar</button>
-                </li>
-              }
+          @if (selectedfoto; as foto) {
+            <ul class="file-list" aria-label="Foto seleccionada">
+              <li>
+                <span class="file-name">{{ foto.name }}</span>
+                <button class="remove-file" type="button" (click)="removeFoto(fotoInput)" [attr.aria-label]="'Quitar ' + foto.name">Quitar</button>
+              </li>
             </ul>
           }
         </div>
       </div>
+
+      @if (submitError) {
+        <p class="field-error" role="alert">{{ submitError }}</p>
+      }
 
       <div class="form-footer">
         <p><span class="required-mark">*</span> Campos obligatorios</p>
